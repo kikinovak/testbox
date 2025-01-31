@@ -1,7 +1,6 @@
 ---  # local.yml
 
 - hosts: localhost
-  connection: local
 
   tasks:
 
