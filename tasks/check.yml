@@ -1,4 +1,4 @@
----  # check.yml
+---  # tasks/check.yml
 
 - name: Get EUID
   set_fact:
@@ -12,4 +12,12 @@
         msg: "Please run this program as root."
     - meta: end_play
   when: eff_uid_number|int != 0
+
+- name: Make sure we're running Rocky Linux 9.x
+  ansible.builtin.assert:
+    that:
+      - ansible_distribution == "Rocky"
+      - ansible_distribution_major_version is version('9', '=')
+    fail_msg: "Please run this playbook on Rocky Linux 9.x only."
+
 ...
