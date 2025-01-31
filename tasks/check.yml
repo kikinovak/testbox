@@ -7,4 +7,9 @@
 - debug:
     var: eff_uid_number
 
+- block:
+    - debug:
+        msg: "Please run this program as root."
+    - meta: end_play
+  when: eff_uid_number|int != 0
 ...
