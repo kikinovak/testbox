@@ -1,6 +1,6 @@
 ---  # local.yml
 
-- hosts: localhost
+- hosts: all
 
   tasks:
 
