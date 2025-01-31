@@ -1,0 +1,10 @@
+---  # check.yml
+
+- name: Get EUID
+  set_fact:
+    eff_uid_number: "{{lookup('pipe', 'id -u')}}"
+
+- debug:
+    var: eff_uid_number
+
+...

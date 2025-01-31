@@ -1,12 +1,9 @@
 ---  # local.yml
 
 - hosts: localhost
-  connection: local
 
   tasks:
 
-    - name: Install htop
-      dnf:
-        name: htop
+    - include_tasks: tasks/check.yml
 
 ...
