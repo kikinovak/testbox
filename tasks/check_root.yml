@@ -1,0 +1,18 @@
+---  # tasks/check_root.yml
+
+# Check if we're running ansible-pull as root
+
+- name: Get EUID
+  set_fact:
+    eff_uid_number: "{{lookup('pipe', 'id -u')}}"
+
+- debug:
+    var: eff_uid_number
+
+- block:
+    - debug:
+        msg: "Please run this program as root."
+    - meta: end_play
+  when: eff_uid_number|int != 0
+
+...

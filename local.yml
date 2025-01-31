@@ -4,6 +4,7 @@
 
   tasks:
 
-    - include_tasks: tasks/check.yml
+    - include_tasks: tasks/check_root.yml
+    - include_tasks: tasks/check_system.yml
 
 ...
