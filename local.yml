@@ -2,9 +2,7 @@
 
 - hosts: localhost
 
-  tasks:
-
-    - include_tasks: tasks/check_root.yml
-    - include_tasks: tasks/check_system.yml
+  roles:
+    - enable_selinux
 
 ...
