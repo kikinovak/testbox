@@ -4,5 +4,9 @@
   ansible.builtin.file:
     path: /.autorelabel
     state: touch
+  notify: Reboot
+
+- name: Reboot
+  ansible.builtin.reboot:
 
 ...
